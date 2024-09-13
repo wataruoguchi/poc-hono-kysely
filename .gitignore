@@ -26,3 +26,6 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+
+# Custom bashrc (optional)
+.bashrc.template

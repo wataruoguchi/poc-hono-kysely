@@ -72,7 +72,10 @@
         "znck.grammarly"
       ]
     }
-  }
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "if [ ! -f ~/.bashrc.orig ] && [ -f .bashrc.template ]; then cp ~/.bashrc ~/.bashrc.orig && cat .bashrc.template >> ~/.bashrc; fi && pnpm install",
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
@@ -80,9 +83,6 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or with the host.
   // "forwardPorts": [3000, 5432],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "yarn install",
 
   // Configure tool-specific properties.
   // "customizations": {},
