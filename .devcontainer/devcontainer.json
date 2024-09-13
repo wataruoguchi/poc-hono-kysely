@@ -1,27 +1,92 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-postgres
 {
-	"name": "Node.js & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {}
-	}
+  "name": "Node.js & PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bierner.markdown-emoji",
+        "bierner.markdown-mermaid",
+        "biomejs.biome",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "davidanson.vscode-markdownlint",
+        "dbaeumer.vscode-eslint",
+        "denoland.vscode-deno",
+        "donjayamanne.githistory",
+        "dotjoshjohnson.xml",
+        "esbenp.prettier-vscode",
+        "firsttris.vscode-jest-runner",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "grapecity.gc-excelviewer",
+        "gruntfuggly.todo-tree",
+        "hashicorp.terraform",
+        "infeng.vscode-react-typescript",
+        "kingwl.vscode-vitest-runner",
+        "mechatroner.rainbow-csv",
+        "mgmcdermott.vscode-language-babel",
+        "mitchdenny.ecdc",
+        "ms-azure-devops.azure-pipelines",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-docker",
+        "ms-playwright.playwright",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        "ms-vscode-remote.remote-wsl",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vscode.azure-account",
+        "ms-vscode.remote-explorer",
+        "ms-vscode.remote-server",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vsliveshare.vsliveshare",
+        "natqe.reload",
+        "naumovs.color-highlight",
+        "oderwat.indent-rainbow",
+        "pmneo.tsimporter",
+        "redhat.vscode-commons",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "vincaslt.highlight-matching-tag",
+        "visualstudioexptteam.intellicode-api-usage-examples",
+        "visualstudioexptteam.vscodeintellicode",
+        "vitest.explorer",
+        "vscode-icons-team.vscode-icons",
+        "vscodevim.vim",
+        "wayou.vscode-todo-highlight",
+        "wraith13.background-phi-colors",
+        "xabikos.javascriptsnippets",
+        "yoavbls.pretty-ts-errors",
+        "znck.grammarly"
+      ]
+    }
+  }
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// This can be used to network with other containers or with the host.
-	// "forwardPorts": [3000, 5432],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // This can be used to network with other containers or with the host.
+  // "forwardPorts": [3000, 5432],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "yarn install",
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  // Configure tool-specific properties.
+  // "customizations": {},
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
