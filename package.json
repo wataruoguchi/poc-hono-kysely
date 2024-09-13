@@ -1,0 +1,19 @@
+{
+  "name": "poc-hono-kysely",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "check": "biome check --write ."
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.2",
+    "hono": "^4.6.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.0",
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1"
+  },
+  "packageManager": "pnpm@8.6.10+sha1.98fe2755061026799bfa30e7dc8d6d48e9c3edf0"
+}
