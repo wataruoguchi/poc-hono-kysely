@@ -1,16 +1,19 @@
 import { Kysely } from "kysely";
 import { PostgresJSDialect } from "kysely-postgres-js";
 import postgres from "postgres";
+import { env } from "./env";
 import type { Database } from "./types";
 
 const db = new Kysely<Database>({
   dialect: new PostgresJSDialect({
     postgres: postgres({
-      database: "postgres",
-      host: "db",
+      database: env.PGDATABASE,
+      host: env.PGHOST,
       max: 10,
-      port: 5432,
-      user: "postgres",
+      port: env.PGPORT,
+      user: env.PGUSER,
     }),
   }),
 });
+
+export const getDb = () => db;
