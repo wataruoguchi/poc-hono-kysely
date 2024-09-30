@@ -21,7 +21,7 @@ app.post(
   zValidator("json", personPostRequestSchema),
   async (c) => {
     const person = c.req.valid("json");
-    getDb().insertInto("person").values(person).execute();
+    await getDb().insertInto("person").values(person).execute();
     return c.json(person);
   }
 );

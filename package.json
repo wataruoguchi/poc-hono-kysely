@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "node -r esbuild-register --watch src/index.ts",
     "format": "prettier --write .",
-    "lint": "biome lint --write ."
+    "lint": "biome lint --write .",
+    "migrate": "node -r esbuild-register scripts/migrate.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.2",
@@ -16,7 +17,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "esbuild-register": "^3.6.0"
+    "esbuild-register": "^3.6.0",
+    "kysely-migration-cli": "^0.4.2"
   },
   "packageManager": "pnpm@8.6.10+sha1.98fe2755061026799bfa30e7dc8d6d48e9c3edf0"
 }
