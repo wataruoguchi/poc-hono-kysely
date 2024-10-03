@@ -11,6 +11,7 @@ services:
       PGUSER: postgres
       PGPASSWORD: postgres
       PGDATABASE: postgres
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
 
     volumes:
       - ../..:/workspaces:cached

@@ -1,18 +1,18 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { Kysely } from "kysely";
+import { DB } from "kysely-codegen";
 import { z } from "zod";
-import { Database } from "./types";
 
-export function getApp(db: Kysely<Database>) {
+export function getApp(db: Kysely<DB>) {
   const app = new Hono();
   app.get("/", (c) => {
     return c.text("Hello Hono!");
   });
 
   const personPostRequestSchema = z.object({
-    first_name: z.string().optional(),
-    last_name: z.string().optional(),
+    first_name: z.string(),
+    last_name: z.string(),
     age: z.number(),
   });
 
@@ -26,7 +26,7 @@ export function getApp(db: Kysely<Database>) {
           .insertInto("person")
           .values(person)
           .returningAll()
-          .executeTakeFirst()
+          .executeTakeFirst();
       });
       return c.json(result, 201);
     }
