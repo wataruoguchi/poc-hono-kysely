@@ -1,9 +1,9 @@
 import { Kysely, Migrator, sql } from "kysely";
+import { DB } from "kysely-codegen";
 import { connectDb, getDb } from "../db";
-import { Database } from "../types";
 import { ESMFileMigrationProvider } from "./ESMFileMigrationProvider";
 
-export type TestDb = Kysely<Database>;
+export type TestDb = Kysely<DB>;
 export async function getTestDb(name = "test"): Promise<TestDb> {
   const db = getDb();
   console.info(`Creating the test database ${name}`);
