@@ -1,7 +1,20 @@
 import { faker } from "@faker-js/faker";
-import { app } from "./app";
+import { Hono } from "hono";
+import { getApp } from "./app";
+import { getTestDb, TestDb } from "./dev-utils/test-db";
 
 describe("POST /api/person", () => {
+  let testDb: TestDb;
+  let app: Hono;
+  beforeAll(async () => {
+    testDb = await getTestDb("app-spec");
+    app = getApp(testDb);
+  });
+
+  afterAll(async () => {
+    await testDb.destroy();
+  });
+
   const testPerson = {
     first_name: faker.person.firstName(),
     last_name: faker.person.lastName(),
@@ -15,6 +28,6 @@ describe("POST /api/person", () => {
       headers: new Headers({ "Content-Type": "application/json" }),
     });
     expect(res.status).toBe(201);
-    expect(await res.json()).toEqual(testPerson);
+    expect(await res.json()).toEqual({ ...testPerson, id: expect.any(String) });
   });
 });

@@ -5,7 +5,7 @@ export interface Database {
 }
 
 export interface PersonTable {
-  id: GeneratedAlways<number>;
+  id: GeneratedAlways<string>;
   first_name: string | null;
   last_name: string | null;
   age: number;
