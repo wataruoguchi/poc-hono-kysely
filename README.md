@@ -16,3 +16,7 @@ pnpm run migrate -- create person_created_at # It generates `db/migrations/20240
 ```sh
 pnpm run migrate -- up # Run a pending migration if any
 ```
+
+```sh
+pnpm migrate -- latest # Run all pending migrations
+```
