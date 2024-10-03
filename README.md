@@ -34,3 +34,12 @@ $ nr codegen
 • Introspecting database...
 ✓ Introspected 1 table and generated ./node_modules/kysely-codegen/dist/db.d.ts in 34ms.
 ```
+
+Then import the generated file. An example is below.
+
+```ts
+// src/dev-utils/test-db.ts
+import { DB } from "kysely-codegen";
+
+export type TestDb = Kysely<DB>;
+```
