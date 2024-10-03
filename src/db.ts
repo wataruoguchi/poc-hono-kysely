@@ -1,11 +1,11 @@
 import { Kysely } from "kysely";
+import { DB } from "kysely-codegen";
 import { PostgresJSDialect } from "kysely-postgres-js";
 import postgres from "postgres";
 import { env } from "./env";
-import type { Database } from "./types";
 
 export function connectDb(databaseName = env.PGDATABASE) {
-  return new Kysely<Database>({
+  return new Kysely<DB>({
     dialect: new PostgresJSDialect({
       postgres: postgres({
         database: databaseName,
