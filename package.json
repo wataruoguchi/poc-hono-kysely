@@ -5,6 +5,7 @@
     "format": "prettier --write .",
     "lint": "biome lint --write .",
     "migrate": "node -r esbuild-register scripts/migrate.ts",
+    "seed": "node -r esbuild-register scripts/seed.ts",
     "codegen": "kysely-codegen",
     "test": "vitest",
     "typecheck": "tsc --noEmit"

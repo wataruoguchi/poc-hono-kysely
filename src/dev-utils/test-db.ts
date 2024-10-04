@@ -38,5 +38,5 @@ export async function getTestDb(name = "test"): Promise<TestDb> {
     console.error(error);
     process.exit(1);
   }
-  return testDb; // TODO: We want to destroy the test db when it's no longer needed.
+  return testDb;
 }
