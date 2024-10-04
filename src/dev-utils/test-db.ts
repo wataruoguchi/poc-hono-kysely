@@ -14,10 +14,7 @@ export async function getTestDb(name = "test"): Promise<TestDb> {
 
   // console.info(`Connecting to the test database ${name}`);
   const testDb = connectDb(name);
-
-  const migrationFolder = new URL("../../db/migrations", import.meta.url)
-    .pathname;
-  // console.info(`Running migrations for ${name} using ${migrationFolder}`);
+  // console.info(`Running migrations for ${name}`);
 
   // https://github.com/kysely-org/kysely/blob/master/example/test/test-context.ts#L50
   const migrator = new Migrator({
