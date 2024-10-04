@@ -3,6 +3,7 @@ import { Hono } from "hono";
 import { Kysely } from "kysely";
 import { DB } from "kysely-codegen";
 import { z } from "zod";
+import { personRepository } from "./repository/person";
 
 export function getApp(db: Kysely<DB>) {
   const app = new Hono();
@@ -21,13 +22,7 @@ export function getApp(db: Kysely<DB>) {
     zValidator("json", personPostRequestSchema),
     async (c) => {
       const person = c.req.valid("json");
-      const result = await db.transaction().execute(async (trx) => {
-        return trx
-          .insertInto("person")
-          .values(person)
-          .returningAll()
-          .executeTakeFirst();
-      });
+      const result = await personRepository(db).create(person);
       return c.json(result, 201);
     }
   );
