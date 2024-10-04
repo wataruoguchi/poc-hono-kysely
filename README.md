@@ -18,7 +18,7 @@ pnpm run migrate -- up # Run a pending migration if any
 ```
 
 ```sh
-pnpm migrate -- latest # Run all pending migrations
+pnpm run migrate -- latest # Run all pending migrations
 ```
 
 ## Codegen
