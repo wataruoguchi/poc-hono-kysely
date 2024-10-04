@@ -24,7 +24,7 @@ pnpm migrate -- latest # Run all pending migrations
 ## Codegen
 
 ```sh
-$ nr codegen
+$ pnpm run codegen
 
 > codegen
 > kysely-codegen
@@ -42,4 +42,10 @@ Then import the generated file. An example is below.
 import { DB } from "kysely-codegen";
 
 export type TestDb = Kysely<DB>;
+```
+
+## Seed
+
+```sh
+pnpm run seed
 ```
